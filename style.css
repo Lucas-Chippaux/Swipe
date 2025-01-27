@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+  background: #008282;
+  font-family: 'Pixelify Sans', serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#desktop {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+/* Carte Quiz */
+.card {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.8s ease-in-out;
+  cursor: pointer;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0f0c0c;
+  border: 4px solid #c0c0c0;
+  border-radius: 1px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  border: 4px solid #c0c0c0;
+  border-radius: 1px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  padding-top: 40px; /* Ajout pour éviter que le contenu chevauche le score */
+}
+
+/* Carte front (recto) */
+.card .front {
+  background-color: #0f0c0c;
+  color: #ffffff;
+}
+
+.card .back {
+  background-color: #c0c0c0;
+  color: #0f0c0c;
+  transform: rotateY(180deg);
+  border: 4px solid #808080;
+}
+
+/* La croix est maintenant visible sur les deux côtés */
+.close-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #c0c0c0;
+  color: black;
+  border: 1px outset #808080;
+  padding: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1;
+  border-radius: 1px; /* Forme carrée avec bords arrondis */
+}
+
+.close-card:hover {
+  background: #ffffff;
+  border: 1px inset #808080;
+}
+
+/* Carte flippée (retournée) */
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Barre Windows 98 */
+#taskbar {
+  height: 40px;
+  background: #c0c0c0;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.4);
+  border-top: 2px solid #fff;
+}
+
+#start-button {
+  display: flex;
+  align-items: center;
+  color: black;
+  padding: 5px 10px;
+  border: 2px outset #808080;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#start-button img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+#start-button:hover {
+  background: #ffffff;
+  border: 2px inset #808080;
+}
+
+#taskbar-buttons {
+  display: flex;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.button {
+  background: #c0c0c0;
+  color: black;
+  padding: 5px 10px;
+  border: 2px outset #808080;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.button-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.button:hover {
+  background: #ffffff;
+}
+
+/* Boutons de réponse sous la question */
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.answer-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #c0c0c0;
+  border: 2px outset #808080;
+  border-radius: 1px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', bold;
+}
+
+.answer-button:hover {
+  background-color: #ffffff;
+}
+
+/* Nouveau bouton cas */
+.new-case-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0f0c0c;
+  border: 2px outset #808080;
+  border-radius: 1px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', bold;
+  color: #c0c0c0;
+  margin-top: 20px;
+}
+
+.new-case-button:hover {
+  background-color: #ffffff;
+}
+
+#center-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px; /* Ajustez selon la taille souhaitée */
+  height: auto;
+  pointer-events: none; /* Empêche le logo d'interférer avec les clics sur les autres éléments */
+}
+
+#score-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+

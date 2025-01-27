@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swipe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/img/icone_swipe.png">
+</head>
+<body>
+  <img id="center-logo" src="/src/img/swipe.png" alt="Logo SwIPe">
+  <div id="desktop"> 
+    <div id="score-container">
+      Score : <span id="score">0</span>
+    </div>
+    <!-- Carte Quiz -->
+    <div class="card" style="display: none;"> <!-- La carte est initialement masquée -->
+      <div class="front">
+        <p class="question">Une cyberattaque plonge une ville dans l’obscurité.</p>
+        <p><strong>Réalité ou Fiction ?</strong></p>
+        <div class="button-container">
+          <button class="answer-button" id="reality">Réalité</button>
+          <button class="answer-button" id="fiction">Fiction</button>
+        </div>
+        <!-- Croisillon pour fermer la carte sur la face avant -->
+        <button class="close-card" id="close-card">×</button>
+      </div>
+      <div class="back">
+        <p class="answer"><strong>Réalité !</strong></p>
+        <p>En 2015, une attaque contre le réseau électrique ukrainien a causé une panne massive, affectant des milliers de foyers.</p>
+        <!-- Bouton Nouveau cas -->
+        <div>
+          <button id="new-case" class="new-case-button">Nouveau cas</button>
+        </div>
+        <!-- Croisillon pour fermer la carte sur la face arrière -->
+        <button class="close-card" id="close-card-back">×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barre Windows 98 -->
+  <div id="taskbar">
+    <div id="start-button">
+      <img src="/src/img/logo_windows.png" alt="Start">
+      <span>Start</span>
+    </div>
+    <div id="taskbar-buttons">
+      <div class="button">
+        <img src="/src/img/logo_questions.png" alt="Quiz Icon" class="button-icon">
+        <span id="quiz">Quiz</span>
+      </div>      
+      <div class="button">
+        <img src="/src/img/logo_explorer.webp" alt="Explorer Icon" class="button-icon">
+        Explorer
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
