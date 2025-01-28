@@ -85,6 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  let score = 0; // Initialisation du score
+  const scoreElement = document.getElementById("score");
+  
   let currentQuestionIndex = 0;
   let isFlipped = false;  // Variable pour savoir si la carte est retournée
 
@@ -97,54 +100,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fonction pour gérer le changement de question après le clic sur "Nouveau cas"
   function changeQuestion() {
-    // Incrémenter l'index de la question et revenir au début si nécessaire
     currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+    card.classList.remove('flipped');
+    isFlipped = false;
+    updateQuestion();
+  }
 
-    // Retourner la carte pour afficher la prochaine question
-    card.classList.remove('flipped');  // Retirer l'effet de retournement (le côté réponse)
-    isFlipped = false; // Réinitialiser l'état de retournement
-    updateQuestion(); // Mettre à jour la question
+  // Fonction pour réinitialiser le score
+  function resetScore() {
+    score = 0;
+    scoreElement.textContent = score;
   }
 
   // Fonction pour afficher la carte (au clic sur "Quiz.exe" dans la barre des tâches)
   taskbarQuizButton.addEventListener('click', () => {
-    card.style.display = 'flex'; // Afficher la carte
-    card.classList.remove('flipped'); // Réinitialiser l'affichage pour être sur la face avant
-    isFlipped = false;  // S'assurer que la carte commence avec la face avant
-    updateQuestion();  // Initialiser la question
+    card.style.display = 'flex';
+    card.classList.remove('flipped');
+    isFlipped = false;
+    updateQuestion();
   });
 
   // Ajout d'un événement au clic sur le bouton "Nouveau cas"
   newCaseButton.addEventListener('click', () => {
-    card.classList.add('flipped'); // Retourner la carte pour afficher la réponse
-    isFlipped = true; // Marquer la carte comme retournée
+    card.classList.add('flipped');
+    isFlipped = true;
 
-    // Changer la question après le flip
     setTimeout(() => {
-      changeQuestion();  // Mettre à jour la question
-      card.classList.remove('flipped'); // Retourner la carte à l'avant après changement
-      isFlipped = false; // Réinitialiser l'état retourné
-    }, 800);  // Timeout pour laisser le temps à l'animation de flip avant de changer la question
+      changeQuestion();
+      card.classList.remove('flipped');
+      isFlipped = false;
+    }, 800);
   });
 
   // Ajout d'un événement au clic sur les boutons de réponse pour flip la carte
   document.querySelectorAll('.answer-button').forEach(button => {
     button.addEventListener('click', () => {
       card.classList.add('flipped');
-      isFlipped = true; // Marquer la carte comme retournée
+      isFlipped = true;
     });
   });
 
   // Ajout de l'événement pour fermer la carte avec la croix sur la face avant
   closeCardFront.addEventListener('click', () => {
-    card.style.display = 'none'; // Cacher la carte
+    card.style.display = 'none';
+    resetScore(); // Réinitialiser le score
   });
 
   // Ajout de l'événement pour fermer la carte avec la croix sur la face arrière
   closeCardBack.addEventListener('click', () => {
-    card.style.display = 'none'; // Cacher la carte
+    card.style.display = 'none';
+    resetScore(); // Réinitialiser le score
+  });
+
+  // Ajoute un event listener aux boutons de réponse
+  document.querySelectorAll(".answer-button").forEach(button => {
+    button.addEventListener("click", (event) => {
+      const userAnswer = event.target.id; // "reality" ou "fiction"
+      const correctAnswer = answerElement.textContent.toLowerCase().includes("réalité") ? "reality" : "fiction";
+
+      if (userAnswer === correctAnswer) {
+        score++; // Augmente le score si la réponse est correcte
+        scoreElement.textContent = score; // Met à jour l'affichage du score
+      }
+
+      // Retourne la carte pour montrer la réponse
+      card.classList.add("flipped");
+    });
   });
   
 });
-
-
