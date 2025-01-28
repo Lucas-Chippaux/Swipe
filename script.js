@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeCardFront = document.getElementById("close-card"); // Croisillon sur la face avant
   const closeCardBack = document.getElementById("close-card-back"); // Croisillon sur la face arrière
   const taskbarQuizButton = document.querySelector(".button #quiz"); // Bouton "Quiz.exe" dans la barre des tâches
+  const notepadContainer = document.getElementById("notepad-container");
+  const notepadExitButton = document.querySelector(".notepad-exit .button-exit");
+  const notepadText = document.getElementById("notepad-text");
+  const explorerButton = document.querySelector("#taskbar-buttons .button:nth-child(2)"); // Bouton "Explorer"
 
   // Tableau des questions et réponses
   const questions = [
@@ -167,4 +171,23 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.add("flipped");
     });
   });
+
+    // Fonction pour afficher le bloc-notes avec les sources
+    function showNotepad() {
+      notepadContainer.style.display = "block";
+      // Remplir le bloc-notes avec les sources des réponses
+      notepadText.innerHTML = questions.map(q => `<p><strong>${q.question}</strong><br>${q.answer}</p>`).join("");
+    }
+  
+    // Fonction pour masquer le bloc-notes
+    function hideNotepad() {
+      notepadContainer.style.display = "none";
+    }
+  
+    // Ajout d'un événement au clic sur le bouton "Explorer"
+    explorerButton.addEventListener('click', showNotepad);
+  
+    // Ajout d'un événement au clic sur le bouton de fermeture du bloc-notes
+    notepadExitButton.addEventListener('click', hideNotepad);
+
 });
