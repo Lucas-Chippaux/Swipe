@@ -8,6 +8,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="src/img/icone_swipe.png">
 </head>
 <body>
+  <!-- Overlay Image -->
+  <div id="overlay-image"></div>
+
   <img id="center-logo" src="/src/img/swipe.png" alt="Logo SwIPe">
   <div id="desktop"> 
     <div id="score-container">
@@ -39,41 +42,41 @@
   </div>
 
   <!-- Bloc-notes -->
-<div id="notepad-container" style="display: none;">
-  <div class="notepad">
-    <div class="notepad-bar">
-      <div class="notepad-icon">
-        <img src="/src/img/logo_explorer.webp" alt="explorer icon">
-      </div>
-      <div class="notepad-title">Explorer - Sources</div>
-      <div class="notepad-exit">
-        <div class="button-exit">&#10060;</div>
-      </div>
-      <div class="notepad-maximize">
-        <div class="button-maximize">
-          <div class="icon-maximize"></div>
+  <div id="notepad-container" style="display: none;">
+    <div class="notepad">
+      <div class="notepad-bar">
+        <div class="notepad-icon">
+          <img src="/src/img/logo_explorer.webp" alt="explorer icon">
         </div>
-      </div>
-      <div class="notepad-minimize">
-        <div class="button-minimize">
-          <div class="icon-minimize"></div>
+        <div class="notepad-title">Explorer - Sources</div>
+        <div class="notepad-exit">
+          <div class="button-exit">&#10060;</div>
         </div>
-      </div>
-    </div> <!-- notepad bar -->
-    <div class="notepad-settings">
-      <div class="settings-text"><span class="underline">F</span>ile</div>
-      <div class="settings-text"><span class="underline">E</span>dit</div>
-      <div class="settings-text"><span class="underline">S</span>earch</div>
-      <div class="settings-text"><span class="underline">H</span>elp</div>
-    </div><!-- notepad settings -->
-    <div class="notepad-content">
-      <h1>Sources</h1>
-      <p id="notepad-text">
-        <!-- Les sources des réponses seront insérées ici dynamiquement -->
-      </p>
-    </div> <!-- notepad content -->
-  </div> <!-- notepad -->
-</div> <!-- notepad-container -->
+        <div class="notepad-maximize">
+          <div class="button-maximize">
+            <div class="icon-maximize"></div>
+          </div>
+        </div>
+        <div class="notepad-minimize">
+          <div class="button-minimize">
+            <div class="icon-minimize"></div>
+          </div>
+        </div>
+      </div> <!-- notepad bar -->
+      <div class="notepad-settings">
+        <div class="settings-text"><span class="underline">F</span>ile</div>
+        <div class="settings-text"><span class="underline">E</span>dit</div>
+        <div class="settings-text"><span class="underline">S</span>earch</div>
+        <div class="settings-text"><span class="underline">H</span>elp</div>
+      </div><!-- notepad settings -->
+      <div class="notepad-content">
+        <h1>Sources</h1>
+        <p id="notepad-text">
+          <!-- Les sources des réponses seront insérées ici dynamiquement -->
+        </p>
+      </div> <!-- notepad content -->
+    </div> <!-- notepad -->
+  </div> <!-- notepad-container -->
 
   <!-- Barre Windows 98 -->
   <div id="taskbar">
