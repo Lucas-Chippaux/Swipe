@@ -224,7 +224,7 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 250px; /* Ajustez selon la taille souhaitée */
+  width: 300px; /* Ajustez selon la taille souhaitée */
   height: auto;
   pointer-events: none; /* Empêche le logo d'interférer avec les clics sur les autres éléments */
 }
