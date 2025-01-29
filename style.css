@@ -381,3 +381,35 @@ body::before {
   overflow: auto;
   padding: 5px;
 }
+
+.shutdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 99;
+  transform: scale3d(0, 0, 1);
+  pointer-events: none;
+}
+
+.shutdown-overlay.active {
+  animation: shutdown 2500ms linear forwards;
+  pointer-events: all;
+}
+
+@keyframes shutdown {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  20% {
+    transform: scale3d(1, 1.6, 1);
+  }
+  50% {
+    transform: scale3d(1, .005, 1);
+  }
+  100% {
+    transform: scale3d(0, 0, 1);
+  }
+}

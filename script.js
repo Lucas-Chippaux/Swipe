@@ -191,3 +191,14 @@ document.addEventListener("DOMContentLoaded", () => {
     notepadExitButton.addEventListener('click', hideNotepad);
 
 });
+
+const startButton = document.getElementById("start-button");
+const shutdownOverlay = document.getElementById("shutdown-overlay");
+
+startButton.addEventListener("click", () => {
+  if (shutdownOverlay.classList.contains("active")) {
+    shutdownOverlay.classList.remove("active");
+  } else {
+    shutdownOverlay.classList.add("active");
+  }
+});
