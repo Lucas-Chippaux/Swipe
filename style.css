@@ -169,7 +169,21 @@ body::before {
   cursor: pointer;
   display: flex;
   align-items: center;
+  padding: 5px 10px;
+  gap: 5px;
 }
+
+.button a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.button a:visited {
+  color: inherit;
+}
+
 
 .button-icon {
   width: 16px;
