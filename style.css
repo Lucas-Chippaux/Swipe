@@ -280,7 +280,7 @@ body::before {
 .notepad-bar {
   width: 100%;
   background: #01007A;
-  height: 23px;
+  height: 30px;
 }
 
 .notepad-title {
@@ -289,10 +289,11 @@ body::before {
   word-spacing: .5px;
   padding-left: 5px;
   float: left;
-  font-weight: 600;
+  font-weight: 800;
+  padding-top: 5px;
 }
 
-.notepad-minimize, .notepad-maximize, .notepad-exit {
+.notepad-exit {
   height: 100%;
   display: block;
   float: right;
@@ -307,7 +308,7 @@ body::before {
 
 .button-minimize, .button-maximize, .button-exit  {
   background: #BFBFBF;
-  height: 100%;
+  height: 65%;
   width: 19px;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
@@ -316,7 +317,7 @@ body::before {
 }
 
 .button-exit {
-  font-size: 55%;
+  font-size: 75%;
   margin: auto;
   text-align: center;
 }
@@ -324,7 +325,8 @@ body::before {
 .notepad-icon {
   height: 100%;
   float: left;
-  padding-top: 1px;
+  padding-top: 5px;
+  padding-left: 5px;
 }
 
 .notepad-icon img {
@@ -373,7 +375,7 @@ body::before {
 
 .notepad-content {
   height: 400px;
-  width: 100%;
+  width: 98%;
   background: white;
   clear: both;
   border-radius: 1px;
