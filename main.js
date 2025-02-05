@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         changeQuestion();
         card.classList.remove("flipped");
         isFlipped = false;
-      }, 1000); // Attends un peu plus longtemps pour s'assurer que l'effet fonctionne
+      }, 200); // Attends un peu plus longtemps pour s'assurer que l'effet fonctionne
     }
   });
   
